@@ -1,0 +1,70 @@
+# Bank of Future - Banking Management System
+
+# Compiled class files
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Serialized data files
+*.ser
+bank_data.ser
+
+# Build directories
+target/
+build/
+out/
+bin/
+
+# IDE specific files
+.vscode/
+.idea/
+*.iml
+*.iws
+*.ipr
+.settings/
+.project
+.classpath
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+.directory
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+*.sqlite
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# MySQL connector (will be downloaded automatically)
+mysql-connector-java-*.jar
+mysql-connector-j-*.jar
+
+# Environment variables
+.env
+.env.local
+
+# Documentation backups
+*.md.backup
+*.bak
