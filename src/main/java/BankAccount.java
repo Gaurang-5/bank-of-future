@@ -375,14 +375,16 @@ public class BankAccount implements java.io.Serializable {
                 String color = WHITE;
 
                 if (transaction.contains("deposit") || transaction.contains("credited")
-                        || transaction.contains("Transfer In")) {
+                        || transaction.contains("Transfer In") || transaction.contains("FD closed")
+                        || transaction.contains("RD closed")) {
                     icon = "↓ ";
                     color = BRIGHT_GREEN;
                 } else if (transaction.contains("withdraw") || transaction.contains("debited")
-                        || transaction.contains("Transfer Out") || transaction.contains("Charge")) {
+                        || transaction.contains("Transfer Out") || transaction.contains("Charge")
+                        || transaction.contains("Fixed Deposit created") || transaction.contains("Recurring Deposit created")) {
                     icon = "↑ ";
                     color = RED;
-                } else if (transaction.contains("created")) {
+                } else if (transaction.contains("Account created")) {
                     icon = "★ ";
                     color = BRIGHT_YELLOW;
                 } else if (transaction.contains("Interest")) {
@@ -457,12 +459,14 @@ public class BankAccount implements java.io.Serializable {
                 double amount = extractAmount(description);
 
                 // Determine if credit or debit
-                if (description.contains("Deposit") || description.contains("received") ||
-                        description.contains("Interest credited") || description.contains("Account created")) {
+                if (description.contains("Deposited:") || description.contains("received") ||
+                        description.contains("Interest credited") || description.contains("Account created") ||
+                        description.contains("FD closed") || description.contains("RD closed")) {
                     creditAmt = amount;
                 } else if (description.contains("Withdrawal") || description.contains("sent") ||
                         description.contains("charged") || description.contains("Fee") ||
-                        description.contains("GST")) {
+                        description.contains("GST") || description.contains("Fixed Deposit created") ||
+                        description.contains("Recurring Deposit created")) {
                     debitAmt = amount;
                 }
 
